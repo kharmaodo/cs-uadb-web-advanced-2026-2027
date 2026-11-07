@@ -1,0 +1,10 @@
+.openapi-generator-ignore
+README.md
+pom.xml
+src/main/java/org/openapitools/api/ApiApi.java
+src/main/java/org/openapitools/api/ApiApiClient.java
+src/main/java/org/openapitools/configuration/ApiKeyRequestInterceptor.java
+src/main/java/org/openapitools/configuration/ClientConfiguration.java
+src/main/java/org/openapitools/model/ApiError.java
+src/main/java/org/openapitools/model/Etudiant.java
+src/main/java/org/openapitools/model/LogementCrous.java

@@ -1,0 +1,8 @@
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/BackendApplication.java
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/api/ApiApi.java
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/api/ApiApiClient.java
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/configuration/ApiKeyRequestInterceptor.java
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/configuration/ClientConfiguration.java
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/model/ApiError.java
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/model/Etudiant.java
+/workspaces/cs-uadb-web-advanced-2026-2027/backend/src/main/java/org/openapitools/model/LogementCrous.java

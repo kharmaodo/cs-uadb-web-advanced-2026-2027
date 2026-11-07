@@ -19,7 +19,7 @@ The contract file `contrats.json` is an **OpenAPI 3.x** document, so we use
 head -c 300 contrats.json
 python3 -m json.tool contrats.json > /dev/null && echo "JSON OK"
 
-wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.10.0/openapi-generator-cli-7.10.0.jar \
+wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.26.0/openapi-generator-cli-7.26.0.jar \
   -O openapi-generator-cli.jar
 ```
 
