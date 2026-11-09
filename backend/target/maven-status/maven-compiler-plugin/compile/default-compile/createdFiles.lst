@@ -1,5 +1,4 @@
 org/openapitools/model/LogementCrous.class
-org/openapitools/model/ApiError.class
 org/openapitools/configuration/ClientConfiguration.class
 org/openapitools/configuration/ApiKeyRequestInterceptor.class
 org/openapitools/api/ApiApiClient.class
