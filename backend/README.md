@@ -16,6 +16,17 @@ To deploy it to a remote Maven repository instead, configure the settings of the
 
 ```shell
 mvn deploy
+
+ mvn spring-boot:run # Port 8080 par défaut
+
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=7777 # Port 7777
+
+
+```
+
+```shell
+Ouvre http://localhost:8080/swagger-ui.html, qui redirige vers /swagger-ui/index.html.
+Le JSON OpenAPI est sur http://localhost:8080/v3/api-docs.
 ```
 
 Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.

@@ -1,7 +1,4 @@
-org/openapitools/model/LogementCrous.class
-org/openapitools/configuration/ClientConfiguration.class
-org/openapitools/configuration/ApiKeyRequestInterceptor.class
-org/openapitools/api/ApiApiClient.class
-org/openapitools/api/ApiApi.class
-org/openapitools/model/Etudiant.class
-org/openapitools/BackendApplication.class
+org/openapitools/model/ApiError.class
+org/openapitools/controllers/ApiController.class
+org/openapitools/controllers/HelloController.class
+org/openapitools/controllers/ApiExceptionHandler.class
