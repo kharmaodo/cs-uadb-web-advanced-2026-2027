@@ -1,6 +1,6 @@
 package org.openapitools ; 
 
-import org.openapitools.filter.RateLimitingFilter;
+import sn.uadb.filter.RateLimitingFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean; 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
