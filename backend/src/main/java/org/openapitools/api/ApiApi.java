@@ -31,7 +31,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-07T15:27:12.796389883Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-12T09:22:16.730637453Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 @Validated
 @Tag(name = "Étudiants", description = "the Étudiants API")
 public interface ApiApi {
@@ -45,6 +45,8 @@ public interface ApiApi {
      * @return Étudiant trouvé avec succès. (status code 200)
      *         or Format de matricule invalide (doit comporter exactement 7 chiffres). (status code 400)
      *         or Aucun étudiant trouvé avec ce code permanent. (status code 404)
+     *         or Clé d&#39;API manquante ou invalide. (status code 401)
+     *         or Limite de requêtes dépassée. (status code 429)
      */
     @Operation(
         operationId = "getEtudiantByMatricule",
@@ -60,7 +62,16 @@ public interface ApiApi {
             }),
             @ApiResponse(responseCode = "404", description = "Aucun étudiant trouvé avec ce code permanent.", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = ApiError.class))
+            }),
+            @ApiResponse(responseCode = "401", description = "Clé d'API manquante ou invalide.", content = {
+                @Content(mediaType = "application/json", schema = @Schema(implementation = ApiError.class))
+            }),
+            @ApiResponse(responseCode = "429", description = "Limite de requêtes dépassée.", content = {
+                @Content(mediaType = "application/json", schema = @Schema(implementation = ApiError.class))
             })
+        },
+        security = {
+            @SecurityRequirement(name = "ApiKeyAuth")
         }
     )
     @RequestMapping(

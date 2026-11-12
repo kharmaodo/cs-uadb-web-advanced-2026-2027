@@ -14,7 +14,7 @@ public class ApiExceptionHandler {
     @ExceptionHandler(ResponseStatusException.class)
     public ResponseEntity<ApiError> handle(ResponseStatusException ex) {
         ApiError err = new ApiError();
-        err.setCode(ex.getStatusCode().value());
+        err.setError(ex.getStatusCode().value());
         err.setMessage(ex.getReason());
         err.setTimestamp(OffsetDateTime.now());
         return ResponseEntity.status(ex.getStatusCode()).body(err);

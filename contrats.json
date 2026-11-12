@@ -9,8 +9,13 @@
     {
       "url": "http://dev-api.uadb.sn/v1",
       "description": "Serveur de développement UADB"
-    }
+    },
+    { "url": "http://localhost:8080",
+     "description": "Serveur local"
+     }
   ],
+"security": [ { "ApiKeyAuth": [] } ],
+  
   "paths": {
     "/api/v1/students/{matricule}": {
       "get": {
@@ -63,7 +68,9 @@
                 }
               }
             }
-          }
+          },
+          "401": { "$ref": "#/components/responses/Unauthorized" },
+"429": { "$ref": "#/components/responses/TooManyRequests" }
         }
       }
     }
@@ -75,8 +82,8 @@
         "required": [
           "id",
           "matricule",
-          "prenom",
-          "nom",
+          "lastname",
+          "firstname",
           "ufr"
         ],
         "properties": {
@@ -156,12 +163,12 @@
       "ApiError": {
         "type": "object",
         "required": [
-          "code",
+          "error",
           "message",
           "timestamp"
         ],
         "properties": {
-          "code": {
+          "error": {
             "type": "integer",
             "example": 404
           },
@@ -176,6 +183,26 @@
           }
         }
       }
-    }
+    },
+
+    "securitySchemes": {
+  "ApiKeyAuth": { "type": "apiKey", "in": "header", "name": "X-API-Key" }
+},
+"responses": {
+  "Unauthorized": {
+    "description": "Clé d'API manquante ou invalide.",
+    "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } }
+  },
+  "TooManyRequests": {
+    "description": "Limite de requêtes dépassée.",
+    "headers": {
+      "Retry-After": {
+        "description": "Nombre de secondes à attendre avant de réessayer.",
+        "schema": { "type": "integer", "example": 42 }
+      }
+    },
+    "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ApiError" } } }
+  }
+}
   }
 }

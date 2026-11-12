@@ -16,3 +16,12 @@ CREATE TABLE IF NOT EXISTS logement_crous (
     numero_chambre TEXT NOT NULL,
     lit            TEXT NOT NULL
 );
+
+
+CREATE TABLE IF NOT EXISTS api_key (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    key_hash   TEXT NOT NULL UNIQUE,
+    owner      TEXT NOT NULL,
+    active     INTEGER NOT NULL DEFAULT 1,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

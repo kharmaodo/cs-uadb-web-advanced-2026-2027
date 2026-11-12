@@ -1,5 +1,8 @@
 package sn.uadb.config;
 
+import java.util.Set;
+import sn.uadb.filter.ApiKeyFilter;
+import sn.uadb.repository.ApiKeyRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -42,6 +45,16 @@ public class FilterConfig {
             @Value("${app.rate-limit.max-requests-per-minute:100}") int max) {
         return register(new RateLimitingFilter(max), 5);
     }
+
+
+
+
+ 
+
+        @Bean
+        public FilterRegistrationBean<ApiKeyFilter> apiKeyFilterRegistration(ApiKeyRepository repository) {
+            return register(new ApiKeyFilter(repository, Set.of("/api/hello")), 6);
+        }
 
     private static <T extends jakarta.servlet.Filter> FilterRegistrationBean<T> register(T filter, int order) {
         FilterRegistrationBean<T> bean = new FilterRegistrationBean<>(filter);
