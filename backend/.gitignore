@@ -1,0 +1,4 @@
+# Maven
+target/
+*.lst
+*.jar.original
