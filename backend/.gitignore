@@ -4,3 +4,9 @@ target/
 *.jar.original
 
 dump-backend.*
+
+# SQLite
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
