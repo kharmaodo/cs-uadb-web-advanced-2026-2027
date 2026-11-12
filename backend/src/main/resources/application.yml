@@ -1,4 +1,6 @@
 spring:
+  jackson:
+    default-property-inclusion: non_null
   datasource:
     url: jdbc:sqlite:uadb.db?foreign_keys=on
     hikari:
