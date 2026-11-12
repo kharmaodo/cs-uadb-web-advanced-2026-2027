@@ -1,0 +1,9 @@
+app:
+  maintenance:
+    enabled: false
+  rate-limit:
+    max-requests-per-minute: 4
+
+logging:
+  pattern:
+    level: "%5p [%X{requestId:-}]"   # affiche l'identifiant de requête dans chaque ligne de log

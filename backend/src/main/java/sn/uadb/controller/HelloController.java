@@ -1,4 +1,4 @@
-package org.openapitools.controllers;
+package sn.uadb.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

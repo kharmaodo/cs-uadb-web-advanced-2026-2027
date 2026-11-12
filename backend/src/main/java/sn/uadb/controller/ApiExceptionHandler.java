@@ -1,4 +1,4 @@
-package org.openapitools.controllers;
+package sn.uadb.controller;
 
 import org.openapitools.model.ApiError;
 import org.springframework.http.ResponseEntity;

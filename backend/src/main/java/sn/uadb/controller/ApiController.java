@@ -1,4 +1,4 @@
-package org.openapitools.controllers;
+package sn.uadb.controller;
 
 import org.openapitools.api.ApiApi;
 import org.openapitools.model.Etudiant;
