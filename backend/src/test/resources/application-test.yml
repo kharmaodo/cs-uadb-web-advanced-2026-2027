@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: "jdbc:sqlite::memory:"
+    hikari:
+      maximum-pool-size: 1
+      max-lifetime: 0          # une base en mémoire disparaît avec sa connexion
+app:
+  rate-limit:
+    max-requests-per-minute: 1000
+  security:
+    bootstrap-key: test-key
