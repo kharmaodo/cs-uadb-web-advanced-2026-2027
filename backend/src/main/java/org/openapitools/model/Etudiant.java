@@ -20,16 +20,16 @@ import jakarta.annotation.Generated;
  * Etudiant
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-07T15:27:12.796389883Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-12T09:22:16.730637453Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class Etudiant {
 
   private String id;
 
   private String matricule;
 
-  private @Nullable String lastname;
+  private String lastname;
 
-  private @Nullable String firstname;
+  private String firstname;
 
   private @Nullable String idCard;
 
@@ -50,9 +50,11 @@ public class Etudiant {
   /**
    * Constructor with only required parameters
    */
-  public Etudiant(String id, String matricule, String ufr) {
+  public Etudiant(String id, String matricule, String lastname, String firstname, String ufr) {
     this.id = id;
     this.matricule = matricule;
+    this.lastname = lastname;
+    this.firstname = firstname;
     this.ufr = ufr;
   }
 
@@ -98,7 +100,7 @@ public class Etudiant {
     this.matricule = matricule;
   }
 
-  public Etudiant lastname(@Nullable String lastname) {
+  public Etudiant lastname(String lastname) {
     this.lastname = lastname;
     return this;
   }
@@ -107,19 +109,19 @@ public class Etudiant {
    * Prénom de l'étudiant.
    * @return lastname
    */
-  
-  @Schema(name = "lastname", example = "Moussa", description = "Prénom de l'étudiant.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @NotNull 
+  @Schema(name = "lastname", example = "Moussa", description = "Prénom de l'étudiant.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("lastname")
-  public @Nullable String getLastname() {
+  public String getLastname() {
     return lastname;
   }
 
   @JsonProperty("lastname")
-  public void setLastname(@Nullable String lastname) {
+  public void setLastname(String lastname) {
     this.lastname = lastname;
   }
 
-  public Etudiant firstname(@Nullable String firstname) {
+  public Etudiant firstname(String firstname) {
     this.firstname = firstname;
     return this;
   }
@@ -128,15 +130,15 @@ public class Etudiant {
    * Nom de famille de l'étudiant.
    * @return firstname
    */
-  
-  @Schema(name = "firstname", example = "Diop", description = "Nom de famille de l'étudiant.", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @NotNull 
+  @Schema(name = "firstname", example = "Diop", description = "Nom de famille de l'étudiant.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("firstname")
-  public @Nullable String getFirstname() {
+  public String getFirstname() {
     return firstname;
   }
 
   @JsonProperty("firstname")
-  public void setFirstname(@Nullable String firstname) {
+  public void setFirstname(String firstname) {
     this.firstname = firstname;
   }
 

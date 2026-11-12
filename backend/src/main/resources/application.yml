@@ -11,6 +11,8 @@ app:
     enabled: false
   rate-limit:
     max-requests-per-minute: 4
+  security:
+    bootstrap-key: ${BOOTSTRAP_API_KEY:}
 
 logging:
   pattern:
