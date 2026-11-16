@@ -1,0 +1,21 @@
+syntax = "proto3";
+package uadb ; 
+
+service Searcher {
+ rpc GetStudentByMatricule(SearchMatriculeRequest) returns (SearchStudentResponse){}
+}
+
+message SearchMatriculeRequest {
+  string matricule = 1;
+}
+message SearchStudentResponse {
+  string id = 1 ;
+  string matricule=2;
+  string lastname=3;
+  string firstname=4;
+  string idCard=5;
+  string idDriver=6;
+  string telephone=7;
+  string emailInstitutionnel=8;
+  string ufr=9;
+}
