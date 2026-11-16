@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@grpc/reflection": "^1.0.4"
+  }
+}
