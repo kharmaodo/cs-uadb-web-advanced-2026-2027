@@ -198,3 +198,4 @@ Pour rendre le projet facilement reproductible par les étudiants, il reste pert
 **Conclusion :** le parcours a permis de valider deux approches complémentaires : l'implémentation réelle d'un service gRPC avec Node.js et la simulation de ce même contrat avec GripMock. Les erreurs rencontrées constituent également des cas pédagogiques utiles pour comprendre les descriptors Protobuf, la réflexion gRPC, les volumes Docker et les règles de correspondance des stubs.
 
 Ce récapitulatif peut constituer la section « Dépannage et validation » du README final.
+

@@ -25,7 +25,6 @@ Renseigne les informations suivantes :
 Si l'interface propose un éditeur JSON, utilise ce contenu :
 
 ```
-
 {
   "service": "greeter.Greeter",
   "method": "SayHello",
