@@ -1,0 +1,144 @@
+openapi: 3.0.3
+info:
+ title: API Gestion des Étudiants - UADB & CROUS
+ description: >
+   API permettant de retrouver les informations d'un étudiant à partir de son
+   code permanent (matricule UADB à 7 chiffres) ou d'autres pièces d'identification.
+ version: 1.0.0
+
+
+servers:
+ - url: http://dev-api.uadb.sn/v1
+   description: Serveur de développement UADB
+
+
+paths:
+ /api/v1/students/{matricule}:
+   get:
+     tags:
+       - Étudiants
+     summary: Récupérer les informations d'un étudiant par son code permanent
+     description: >
+       Prend en entrée le code permanent (matricule UADB de 7 chiffres) et
+       renvoie la fiche détaillée de l'étudiant (nom, prénom, UFR, contact, chambre CROUS).
+     operationId: getEtudiantByMatricule
+     parameters:
+       - name: matricule
+         in: path
+         required: true
+         description: "Code permanent UADB (7 chiffres, ex: 23 pour la promo 2023)."
+         schema:
+           type: string
+           pattern: '^[0-9]{7}$'
+           example: "2300123"
+     responses:
+       "200":
+         description: Étudiant trouvé avec succès.
+         content:
+           application/json:
+             schema:
+               $ref: "#/components/schemas/Etudiant"
+       "400":
+         description: Format de matricule invalide (doit comporter exactement 7 chiffres).
+         content:
+           application/json:
+             schema:
+               $ref: "#/components/schemas/ApiError"
+       "404":
+         description: Aucun étudiant trouvé avec ce code permanent.
+         content:
+           application/json:
+             schema:
+               $ref: "#/components/schemas/ApiError"
+
+
+components:
+ schemas:
+   Etudiant:
+     type: object
+     required:
+       - id
+       - matricule
+       - prenom
+       - nom
+       - ufr
+     properties:
+       id:
+         type: string
+         pattern: '^[0-9]{7}$'
+         description: Code permanent UADB à 7 chiffres.
+         example: "204"
+       matricule:
+         type: string
+         pattern: '^[0-9]{7}$'
+         description: Code permanent UADB à 7 chiffres.
+         example: "2300123"
+       lastname:
+         type: string
+         description: Prénom de l'étudiant.
+         example: "Moussa"
+       firstname:
+         type: string
+         description: Nom de famille de l'étudiant.
+         example: "Diop"
+       idCard:
+         type: string
+         description: Numéro de Carte Nationale d'Identité.
+         example: "1234199801234"
+       idDriver:
+         type: string
+         description: Numéro de permis de conduire.
+         example: "DK-123456"
+       telephone:
+         type: string
+         description: Numéro de téléphone portable.
+         example: "+221771234567"
+       emailInstitutionnel:
+         type: string
+         format: email
+         description: Adresse email UADB.
+         example: "moussa.diop@uadb.edu.sn"
+       ufr:
+         type: string
+         description: Unité de Formation et de Recherche (UFR).
+         example: "SAT (Sciences Appliquées et Technologies)"
+       logementCrous:
+         $ref: "#/components/schemas/LogementCrous"
+
+
+   LogementCrous:
+     type: object
+     properties:
+       pavillon:
+         type: string
+         description: Nom ou lettre du pavillon au campus social.
+         example: "Pavillon A"
+       numeroChambre:
+         type: string
+         description: Numéro de chambre.
+         example: "14"
+       lit:
+         type: string
+         description: "Identifiant du lit (ex: A, B)."
+         example: "B"
+
+
+   ApiError:
+     type: object
+     required:
+       - code
+       - message
+       - timestamp
+     properties:
+       code:
+         type: integer
+         example: 404
+       message:
+         type: string
+         example: "Aucun étudiant trouvé avec le matricule 2300123."
+       timestamp:
+         type: string
+         format: date-time
+         example: "2026-11-07T10:59:00Z"
+        
+
