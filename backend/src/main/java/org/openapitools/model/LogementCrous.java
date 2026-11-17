@@ -19,7 +19,7 @@ import jakarta.annotation.Generated;
  * LogementCrous
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-07T15:27:12.796389883Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-12T09:22:16.730637453Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class LogementCrous {
 
   private @Nullable String pavillon;

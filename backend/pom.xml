@@ -10,7 +10,6 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springdoc.version>3.0.0</springdoc.version>
-        <spring-cloud.version>2025.1.1</spring-cloud.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,17 +26,7 @@
     </plugins>
   </build>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>2025.1.4</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-        </dependencies>
-    </dependencyManagement>
+
 
     <dependencies>
         <!--SpringDoc dependencies -->
@@ -51,10 +40,6 @@
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
             <version>3.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -101,6 +86,17 @@
       <scope>runtime</scope>
       <optional>true</optional>
     </dependency>
+
+
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.xerial</groupId>
+    <artifactId>sqlite-jdbc</artifactId>
+    <version>3.50.3.0</version> <!-- vérifie la dernière version sur Maven Central -->
+</dependency>
     
     </dependencies>
 </project>

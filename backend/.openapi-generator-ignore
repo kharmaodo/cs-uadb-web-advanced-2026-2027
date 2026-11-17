@@ -21,3 +21,7 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# Code client Feign inutile côté serveur
+src/main/java/org/openapitools/api/ApiApiClient.java
+src/main/java/org/openapitools/configuration/ApiKeyRequestInterceptor.java

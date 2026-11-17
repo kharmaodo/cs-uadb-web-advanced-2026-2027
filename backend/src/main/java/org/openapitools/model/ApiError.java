@@ -21,10 +21,10 @@ import jakarta.annotation.Generated;
  * ApiError
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-07T15:27:12.796389883Z[Etc/UTC]", comments = "Generator version: 7.26.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-11-12T09:22:16.730637453Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class ApiError {
 
-  private Integer code;
+  private Integer error;
 
   private String message;
 
@@ -38,31 +38,31 @@ public class ApiError {
   /**
    * Constructor with only required parameters
    */
-  public ApiError(Integer code, String message, OffsetDateTime timestamp) {
-    this.code = code;
+  public ApiError(Integer error, String message, OffsetDateTime timestamp) {
+    this.error = error;
     this.message = message;
     this.timestamp = timestamp;
   }
 
-  public ApiError code(Integer code) {
-    this.code = code;
+  public ApiError error(Integer error) {
+    this.error = error;
     return this;
   }
 
   /**
-   * Get code
-   * @return code
+   * Get error
+   * @return error
    */
   @NotNull 
-  @Schema(name = "code", example = "404", requiredMode = Schema.RequiredMode.REQUIRED)
-  @JsonProperty("code")
-  public Integer getCode() {
-    return code;
+  @Schema(name = "error", example = "404", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("error")
+  public Integer getError() {
+    return error;
   }
 
-  @JsonProperty("code")
-  public void setCode(Integer code) {
-    this.code = code;
+  @JsonProperty("error")
+  public void setError(Integer error) {
+    this.error = error;
   }
 
   public ApiError message(String message) {
@@ -116,21 +116,21 @@ public class ApiError {
       return false;
     }
     ApiError apiError = (ApiError) o;
-    return Objects.equals(this.code, apiError.code) &&
+    return Objects.equals(this.error, apiError.error) &&
         Objects.equals(this.message, apiError.message) &&
         Objects.equals(this.timestamp, apiError.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, timestamp);
+    return Objects.hash(error, message, timestamp);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiError {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");

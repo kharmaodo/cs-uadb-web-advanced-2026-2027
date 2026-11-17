@@ -1,0 +1,21 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  datasource:
+    url: jdbc:sqlite:uadb.db?foreign_keys=on
+    hikari:
+      maximum-pool-size: 1      # SQLite n'accepte qu'un écrivain à la fois
+  sql:
+    init:
+      mode: always              # schema.sql et data.sql sont rejoués au démarrage
+app:
+  maintenance:
+    enabled: false
+  rate-limit:
+    max-requests-per-minute: 4
+  security:
+    bootstrap-key: ${BOOTSTRAP_API_KEY:}
+
+logging:
+  pattern:
+    level: "%5p [%X{requestId:-}]"   # affiche l'identifiant de requête dans chaque ligne de log
