@@ -17,7 +17,6 @@ const packageDef = protoLoader.loadSync(PROTO_PATH, {
 // The package declared in students.proto is "uadb"
 const studentsProto = grpc.loadPackageDefinition(packageDef).uadb;
 
-
 // Mock database
 const students = [
   {
